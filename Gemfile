@@ -49,6 +49,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+gem 'dalli'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'popper_js', '~> 1.9.9'
