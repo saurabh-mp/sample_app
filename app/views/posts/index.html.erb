@@ -2,22 +2,23 @@
 <div class="row px-4">
   <div class="col-md-4"> <h3> Posts </h3> </div>
   <%= link_to "New Post", new_post_path, class: "btn btn-primary offset-md-6 col-md-2" %>
-  </div>
 </div>
 <br />
 <div class="col-md-12">
   <table class="table">
     <tr>
       <th>Title</th>
+      <th>Tags</th>
       <th>Created At</th>
       <th>Updated At</th>
     </tr>
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title%></td>
+        <td><%= REDIS.get(post.id)%></td>
         <td><%= post.created_at %></td>
         <td><%= post.updated_at%></td>
       </tr>
-      <% end %>
+    <% end %>
   </table>
 </div>
